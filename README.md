@@ -16,6 +16,8 @@ QueueURL = https://sqs.eu-central-1.amazonaws.com/123456789/roundtrip-MyQueue
 
 ### Helpers
 
+#### Send a couple of messages to SQS
+
 ```bash
 $ > ./scripts/send-batch-to-sqs.sh https://sqs.eu-central-1.amazonaws.com/123456789/roundtrip-MyQueue
 ```
