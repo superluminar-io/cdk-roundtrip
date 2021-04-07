@@ -13,6 +13,7 @@ import { addKey, addQueue, addTopic, addSecret, addTable, addBucket, configureLo
 import { addFunctionFile, addFunctionPublish, addFunctionDynamoDBStream, addFunctionRotate, addFunctionSubscribe, addFunctionAlarm } from '../blocks/functions'
 import { configureRotation, configureSubscription, subscribeFunction, configureDynamoDBStream, configureS3Event, configureEventRule } from '../blocks/configuration'
 import { grantKeyAliasDecryptToLambda, grandBucketReadWriteToLambda, grantTopicPublishToLambda, configureKeyAccessForFunctionPublish, configureKeyAccessForSNS, grantTableReadWriteToLambda, grantSecretReadToLambda } from '../blocks/access'
+import { outputSQSQueue } from '../blocks/outputs'
 
 export class MainStack extends cdk.Stack {
   key: kms.IKey
@@ -69,5 +70,7 @@ export class MainStack extends cdk.Stack {
 
     configureS3Event(this)
     grantSecretReadToLambda(this)
+
+    outputSQSQueue(this)
   }
 }
