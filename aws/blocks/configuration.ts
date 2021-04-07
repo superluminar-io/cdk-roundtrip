@@ -44,7 +44,7 @@ export function configureSubscription(stack: MainStack) {
 }
 
 export function subscribeFunction(stack: MainStack) {
-  stack.funtionSubscribe.lambda.addEventSource(
+  stack.functionSubscribe.lambda.addEventSource(
     new lambdaEvent.SqsEventSource(stack.queue,
       {
         batchSize: 5,

@@ -6,7 +6,7 @@ export function addFunctionFile(stack: MainStack) {
 }
 
 export function addFunctionSubscribe(stack: MainStack) {
-  stack.funtionSubscribe = new LambdaFunction(stack, "MyFunctionSubscribe", "src/subscribe.ts")
+  stack.functionSubscribe = new LambdaFunction(stack, "MyFunctionSubscribe", "src/subscribe.ts")
 }
 
 export function addFunctionRotate(stack: MainStack) {
@@ -14,7 +14,7 @@ export function addFunctionRotate(stack: MainStack) {
 }
 
 export function addFunctionPublish(stack: MainStack) {
-  stack.funtionPublish = new LambdaFunction(stack, "MyFunctionPublish", {
+  stack.functionPublish = new LambdaFunction(stack, "MyFunctionPublish", {
     file: "src/publish.ts",
     environment: {
       TOPIC_ARN: stack.topic.topicArn,
@@ -31,7 +31,7 @@ export function addFunctionDynamoDBStream(stack: MainStack) {
   })
 }
 
-export function addFunctioAlarm(stack: MainStack) {
+export function addFunctionAlarm(stack: MainStack) {
   stack.functionAlarm = new LambdaFunction(stack, "MyFunctionAlarm", {
     file: "src/alarm.ts",
     environment: {

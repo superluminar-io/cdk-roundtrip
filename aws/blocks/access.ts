@@ -8,7 +8,7 @@ export function configureKeyAccessForFunctionPublish(stack: MainStack) {
     effect: iam.Effect.ALLOW,
     resources: ['*'],
     principals: [
-      stack.funtionPublish.lambda.role!
+      stack.functionPublish.lambda.role!
     ],
     actions: [
       'kms:Decrypt',
@@ -37,7 +37,7 @@ export function grandBucketReadWriteToLambda(stack: MainStack) {
 }
 
 export function grantTopicPublishToLambda(stack: MainStack) {
-  stack.topic.grantPublish(stack.funtionPublish.lambda)
+  stack.topic.grantPublish(stack.functionPublish.lambda)
 }
 
 export function grantTableReadWriteToLambda(stack: MainStack) {

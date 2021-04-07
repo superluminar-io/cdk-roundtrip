@@ -10,7 +10,7 @@ import * as cdk from '@aws-cdk/core'
 
 import { LambdaFunction } from '../constructs/function'
 import { addKey, addQueue, addTopic, addSecret, addTable, addBucket, configureLogMetric, configureLogMetricAlarm } from '../blocks/resources'
-import { addFunctionFile, addFunctionPublish, addFunctionDynamoDBStream, addFunctionRotate, addFunctionSubscribe, addFunctioAlarm } from '../blocks/functions'
+import { addFunctionFile, addFunctionPublish, addFunctionDynamoDBStream, addFunctionRotate, addFunctionSubscribe, addFunctionAlarm } from '../blocks/functions'
 import { configureRotation, configureSubscription, subscribeFunction, configureDynamoDBStream, configureS3Event, configureEventRule } from '../blocks/configuration'
 import { grantKeyAliasDecryptToLambda, grandBucketReadWriteToLambda, grantTopicPublishToLambda, configureKeyAccessForFunctionPublish, configureKeyAccessForSNS, grantTableReadWriteToLambda, grantSecretReadToLambda } from '../blocks/access'
 
@@ -19,8 +19,8 @@ export class MainStack extends cdk.Stack {
   keyAlias: kms.IAlias
   queue: sqs.IQueue
   topic: sns.ITopic
-  funtionPublish: LambdaFunction
-  funtionSubscribe: LambdaFunction
+  functionPublish: LambdaFunction
+  functionSubscribe: LambdaFunction
   functionAlarm: LambdaFunction
   functionRotate: LambdaFunction
   functionStream: LambdaFunction
@@ -55,7 +55,7 @@ export class MainStack extends cdk.Stack {
     configureLogMetric(this)
     configureLogMetricAlarm(this)
 
-    addFunctioAlarm(this)
+    addFunctionAlarm(this)
     grantKeyAliasDecryptToLambda(this)
 
     configureEventRule(this)
