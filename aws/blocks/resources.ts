@@ -53,7 +53,8 @@ export function addBucket(stack: MainStack) {
 
 export function configureLogMetric(stack: MainStack) {
   const logGroup = new logs.LogGroup(stack, 'MyLogGroup', {
-    logGroupName: `/aws/lambda/${stack.functionSubscribe.lambda.functionName}`
+    logGroupName: `/aws/lambda/${stack.functionSubscribe.lambda.functionName}`,
+    // encryptionKey: stack.keyAlias,
   })
 
   stack.logFilter = new logs.MetricFilter(stack, 'MyMetricFilter', {

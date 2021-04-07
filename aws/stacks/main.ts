@@ -35,42 +35,90 @@ export class MainStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
     super(scope, id, props)
 
+    /**
+     * Use KMS to create a new key to encrypt data at rest
+     */
     addKey(this)
+
+    /**
+     * Create SQS queue.
+     */
     addQueue(this)
+
+    /**
+     * Create SNS topic and add SQS subscription
+     */
     addTopic(this)
-    addTable(this)
-    addBucket(this)
-
-    addFunctionPublish(this)
-    addFunctionSubscribe(this)
-    addFunctionRotate(this)
-    addFunctionFile(this)
-    addSecret(this)
-
     configureSubscription(this)
-    grantTopicPublishToLambda(this)
     configureKeyAccessForSNS(this)
+
+    /**
+     * Create lambda function to publish message in topic
+     */
+    addFunctionPublish(this)
+    grantTopicPublishToLambda(this)
     configureKeyAccessForFunctionPublish(this)
 
+    /**
+     * Create lambda function to subscribe for sqs message
+     */
+    addFunctionSubscribe(this)
     subscribeFunction(this)
+
+    /**
+     * Create LogGroup Filter for metric about messages per event
+     */
     configureLogMetric(this)
+
+    /**
+     * Create CloudWatch Alarm for metric
+     */
     configureLogMetricAlarm(this)
 
-    addFunctionAlarm(this)
-    grantKeyAliasDecryptToLambda(this)
+    /**
+     * Create DynamoDB
+     */
+    addTable(this)
 
+    /**
+     * Create Secret
+     */
+    addSecret(this)
+    addFunctionRotate(this)
+    configureRotation(this)
+
+    /**
+     * Create lambda function for alarm
+     */
+    addFunctionAlarm(this)
     configureEventRule(this)
 
-    configureRotation(this)
+    grantKeyAliasDecryptToLambda(this)
     grantTableReadWriteToLambda(this)
-
-    addFunctionDynamoDBStream(this)
-    configureDynamoDBStream(this)
-    grandBucketReadWriteToLambda(this)
-
-    configureS3Event(this)
     grantSecretReadToLambda(this)
 
+    /**
+     * Create S3 Bucket
+     */
+    addBucket(this)
+
+    /**
+     * Create lamdba function for DynamoDB stream
+     */
+    addFunctionDynamoDBStream(this)
+    configureDynamoDBStream(this)
+
+    grandBucketReadWriteToLambda(this)
+
+    /**
+     * Create lambda function for S3 event
+     */
+    addFunctionFile(this)
+    configureS3Event(this)
+
+    /**
+     * Add CloudFormation Outputs
+     */
     outputSQSQueue(this)
   }
 }
