@@ -1,6 +1,24 @@
 # CDK Roudtrip
 
-> Serverless AWS architecture.
+> Examples for serverless AWS architecture.
+
+## Architecture
+
+- KMS for encryption at rest
+- SQS queue for message queueing
+- SNS topic for message publishing
+- Lambda function to publish message
+- Lambda function to process message
+- CloudWatch LogGroup Filter for metric aggregation
+- CloudWatch Alarm for metric alarms
+- Lambda function for alarm handling with EventBridge
+- DynamoDB table for alarm logging
+- DynamoDB stream for change tracking
+- Lambda function for DynamoDB persistance in S3
+- SecretsManager secret for salt persistance
+- Lambda function for secret Rotation
+
+![Architecture](/docs/designer.png)
 
 ## Deploy
 
