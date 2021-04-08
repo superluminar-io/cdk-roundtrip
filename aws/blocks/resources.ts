@@ -22,18 +22,21 @@ export function addQueue(stack: MainStack) {
     dataKeyReuse: cdk.Duration.minutes(5),
     encryptionMasterKey: stack.keyAlias,
   })
+  stack.queue.node.addDependency(stack.keyAlias)
 }
 
 export function addTopic(stack: MainStack) {
   stack.topic = new sns.Topic(stack, 'MyTopic', {
     masterKey: stack.keyAlias,
   })
+  stack.topic.node.addDependency(stack.keyAlias)
 }
 
 export function addSecret(stack: MainStack) {
   stack.secret = new secretsmanager.Secret(stack, 'MySecret', {
     encryptionKey: stack.keyAlias
   })
+  stack.secret.node.addDependency(stack.keyAlias)
 }
 
 export function addTable(stack: MainStack) {
@@ -42,6 +45,7 @@ export function addTable(stack: MainStack) {
     encryptionKey: stack.keyAlias,
     stream: dynamodb.StreamViewType.NEW_AND_OLD_IMAGES
   })
+  stack.table.node.addDependency(stack.keyAlias)
 }
 
 export function addBucket(stack: MainStack) {
