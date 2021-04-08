@@ -1,4 +1,4 @@
-# CDK Roudtrip
+# CDK Roundtrip
 
 > Examples for serverless AWS architecture.
 
