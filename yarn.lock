@@ -774,6 +774,16 @@
   dependencies:
     yaml "1.10.2"
 
+"@aws-sdk/service-error-classification@^3.4.1":
+  version "3.55.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/service-error-classification/-/service-error-classification-3.55.0.tgz#4a85d2d947102c50076bd2af295f62abd74e26ab"
+  integrity sha512-HdjnDyarsa1Avq1MJurkLyEe9c3eRa76dPmK4TmRGgwJ+tInEzGHL0rBW7V8xBK+PDF+fJQ71hvm8jPYmzvBwQ==
+
+"@aws-sdk/types@^3.4.1":
+  version "3.55.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.55.0.tgz#d524d567e2b2722f2d6be83e2417dd6d46ce1490"
+  integrity sha512-wrDZjuy1CVAYxDCbm3bWQIKMGfNs7XXmG0eG4858Ixgqmq2avsIn5TORy8ynBxcXn9aekV/+tGEQ7BBSYzIVNQ==
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -1347,7 +1357,7 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/cls-hooked@*":
+"@types/cls-hooked@^4.3.3":
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/@types/cls-hooked/-/cls-hooked-4.3.3.tgz#c09e2f8dc62198522eaa18a5b6b873053154bd00"
   integrity sha512-gNstDTb/ty5h6gJd6YpSPgsLX9LmRpaKJqGFp7MRlYxhwp4vXXKlJ9+bt1TZ9KbVNXE+Mbxy2AYXcpY21DDtJw==
@@ -1770,48 +1780,48 @@ aws-sign2@~0.7.0:
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
   integrity sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=
 
-aws-xray-sdk-core@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/aws-xray-sdk-core/-/aws-xray-sdk-core-3.2.0.tgz#45421ec5f11824e4fcac9cdc868eb2421af9df45"
-  integrity sha512-6mhqmRsQbDAISyKQuYguO38AhHgGSZsmYLVUYWUV9eJ+GiHZf08apwM7fSdiRw56qCulgSTV5JG2/cnPmtBhUA==
+aws-xray-sdk-core@3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/aws-xray-sdk-core/-/aws-xray-sdk-core-3.3.5.tgz#1a88d3f8c8ffd83dd66abfa54d191dba0c4c30b9"
+  integrity sha512-oJ/zPZc0foeeA4G64SonN3Fw9jJetzcMc98QY0V8qc7G9Gp9WhPMEHU2mI2uP05hwYf63FJO22K4UmSKtKza+Q==
   dependencies:
-    "@types/cls-hooked" "*"
+    "@aws-sdk/service-error-classification" "^3.4.1"
+    "@aws-sdk/types" "^3.4.1"
+    "@types/cls-hooked" "^4.3.3"
     atomic-batcher "^1.0.2"
     cls-hooked "^4.2.2"
-    pkginfo "^0.4.0"
     semver "^5.3.0"
 
-aws-xray-sdk-express@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/aws-xray-sdk-express/-/aws-xray-sdk-express-3.2.0.tgz#cad3681cc51ac66001b38861c2dfb1dd0a129491"
-  integrity sha512-r0XX/2JmIYES1vUYee6MgmXpAc2Ru86S8J8u5kwOvTGT1hKqJcdPF8GSKocPKqCw1KSRvDOWqwkwJu8/mDl9Ew==
+aws-xray-sdk-express@3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/aws-xray-sdk-express/-/aws-xray-sdk-express-3.3.5.tgz#21ae75cb3adeecf01158d3e37cdf1a69c2d45db9"
+  integrity sha512-A6N6riVA9Hf2dWEVvowbJZzTnPfckqt0NnMDf494Q/CMIajf2+XCMZkOlMHz4FMuhB741LisPUmFMf7e8U+KLw==
   dependencies:
     "@types/express" "*"
 
-aws-xray-sdk-mysql@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/aws-xray-sdk-mysql/-/aws-xray-sdk-mysql-3.2.0.tgz#3ca8a1401d7ed8abcafe2befa1e881547b012435"
-  integrity sha512-MlX5ngtQseoSCU04gJGqOh3hFDv8+J6qrgeuaTJqIrSy7X8Rsz4bXZessjLfyuuAWGXsDrwquj5lpBU8jvoHuw==
+aws-xray-sdk-mysql@3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/aws-xray-sdk-mysql/-/aws-xray-sdk-mysql-3.3.5.tgz#682bb5595e82fd2f986b490cbcb7612fddfa52c7"
+  integrity sha512-Itgmx8P8weOTYjt5LWGje0yjE3A9tNsCW3O3dLDj5mvoDxZ7Gxni39s5CRu9sqgTJA4kORK6IOsD69ObK+/uxg==
   dependencies:
     "@types/mysql" "*"
 
-aws-xray-sdk-postgres@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/aws-xray-sdk-postgres/-/aws-xray-sdk-postgres-3.2.0.tgz#b6804d674d24de41c51a71c76777c674e8d5a70a"
-  integrity sha512-Xg3X7Wi6TLEjfLXsPwep9sbTbCn1iqYAV6G4+5jQT4VOE+nn6xa7NntewtxWdvfn77awk4Rb8tQ11ftJOMfTrA==
+aws-xray-sdk-postgres@3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/aws-xray-sdk-postgres/-/aws-xray-sdk-postgres-3.3.5.tgz#7a3007415c27ad697beda1e41e1b3249158b0187"
+  integrity sha512-qwdLighXHrx6CDAylkcXyeF8tN3GmvOGtAY1hlNOCHy84U86z38AbRAMduPr8l9ughhXctiBmyhtKBOGUztiNQ==
   dependencies:
     "@types/pg" "*"
 
-aws-xray-sdk@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/aws-xray-sdk/-/aws-xray-sdk-3.2.0.tgz#0c8638ae30d80e460e9f6c9b3d160bf9c8b5e3a1"
-  integrity sha512-ARPagVVljHbad8lVsUVRCQrbPERIjb/itEZBgDyyGufHU/kLZ4XvhG0Vocixyrweo7PMCukGyPvSmKyBqbSxiQ==
+aws-xray-sdk@^3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/aws-xray-sdk/-/aws-xray-sdk-3.3.5.tgz#04c64352bbe0bf121d6e03aae0704e5f5bdcf09f"
+  integrity sha512-srlgeBay0LM3IK1EkWTacvB1/Qa0AQ+CDYEqoNU9DR3qb7wvkzsV1pJ9Su+MsrF0D1DCMzV+u14FnYy5u6tsBw==
   dependencies:
-    aws-xray-sdk-core "3.2.0"
-    aws-xray-sdk-express "3.2.0"
-    aws-xray-sdk-mysql "3.2.0"
-    aws-xray-sdk-postgres "3.2.0"
-    pkginfo "^0.4.0"
+    aws-xray-sdk-core "3.3.5"
+    aws-xray-sdk-express "3.3.5"
+    aws-xray-sdk-mysql "3.3.5"
+    aws-xray-sdk-postgres "3.3.5"
 
 aws4@^1.8.0:
   version "1.11.0"
@@ -4605,11 +4615,6 @@ pkg-dir@^4.2.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
-
-pkginfo@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/pkginfo/-/pkginfo-0.4.1.tgz#b5418ef0439de5425fc4995042dced14fb2a84ff"
-  integrity sha1-tUGO8EOd5UJfxJlQQtztFPsqhP8=
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
